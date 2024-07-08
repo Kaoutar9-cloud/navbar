@@ -1,0 +1,99 @@
+/* nav.css */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(237, 237, 237, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+#nav {
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+
+#nav li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#nav li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  color: #01204E;
+  transition: 0.2s ease-in-out;
+}
+
+#nav li a:hover,
+#nav li a.active {
+  color: #ffbf00;
+}
+
+#nav li a:hover::after,
+#nav li a.active::after { 
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #ffbf00;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+.logo {
+  width: 30px;
+  transform: scale(3);
+}
+
+#mobile {
+  display: none;
+}
+
+#mobile i {
+  color: #01204E;
+  align-items: center;
+}
+
+#bar {
+  font-size: 2rem;
+  color: #01204E;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+  #nav {
+    display: flex;  
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 90px;
+    right: -400px;
+    width: 300px;
+    height: 100vh;
+    background: #2a3239;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px 0 0 10px;
+    transition: 0.3s;
+  }
+#nav.active{
+right: 0px;
+}
+  #nav li{
+    margin-bottom: 25px ease-in-out;
+  }
+
+  #mobile {
+    display: block;
+  }
+  #mobile i{
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
